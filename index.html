@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome!!</title>
+    <style>
+        body{
+            background-image: url(palindrome.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        #Char{
+            font-size: 20px;
+            text-align: center;
+        }
+        #container{
+            border: 2px solid black;
+            border-radius: 20px;
+            margin: auto;
+            width: 480px;
+            padding: 10px 5px 5px 30px;
+            position: relative;
+            top: 150px;
+            background-color: rgba(8, 34, 34, 0.979);
+            color: rgb(172, 206, 195);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1 style="margin-left: 120px;">Palindrome</h1>
+    <p>A palindrome is a value that reads the same from backward or forward.</p>
+    <h3 style="margin-left: 100px;">ENTER THE STRING:</h3>
+    <input type="text" id="Char" style="margin-left: 60px;">
+    <button type="button" id="Btn">check</button>
+    <h3 id="display" style="margin-left: 100px;"></h3>
+    </div>
+</body>
+<script>
+    let string = document.querySelector("#Char")
+    let button = document.querySelector("#Btn")
+    let display1 = document.querySelector("#display")
+
+    button.addEventListener("click", Check)
+    function Check(){
+        let oldinput = string.value;
+        let input = oldinput.split("");
+        input.reverse();
+        let output = input.join("");
+
+        if (oldinput == output){
+            display1.innerHTML = "yes! it is pallindrome!";
+            display1.style.color = "green"
+        }
+        else{
+            display1.innerHTML = "Sorry!! Not a pallindrome!!";
+            display1.style.color = "red"
+        }
+    }
+
+    // setInterval(function(){
+    //     let display1 = document.querySelector("#display")
+    //     display1.style.opacity = (display1.style.opacity == 0 ? 1 : 0);
+    //    }, 500);
+
+</script>
+</html>
+
+        <!-- let p = "daddy"
+        let q = p.split("")
+        console.log(q)
+        q.reverse()
+        console.log(q)
+        let r = q.join()
+        console.log(r) -->
